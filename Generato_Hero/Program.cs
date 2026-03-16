@@ -12,10 +12,10 @@ Console.WriteLine("            SHERALAND RPG                ");
 Console.WriteLine("=========================================");
 Console.ResetColor();
 
-string name = ReadStr("Введите ваше имя: ");
-string surname = ReadStr("Введите вашу фамилию: ");
-Console.Write("Введите ваш возраст: ");
-int age = ReadInt("Пожалуйста, введите корректный возраст: ", 18, 55);
+string name = ReadStr("\n[?] Введите ваше имя: ");
+string surname = ReadStr("[?] Введите вашу фамилию: ");
+Console.Write("[?]Введите ваш возраст: ");
+int age = ReadInt("[!] Введите корректный возраст (18-150): ", 18, 55);
 
 
 Console.WriteLine("\nВыберите путь вашего героя:");
@@ -24,8 +24,8 @@ Console.ForegroundColor = ConsoleColor.Blue;   Console.WriteLine("  2. [МАГ] 
 Console.ForegroundColor = ConsoleColor.Green;  Console.WriteLine("  3. [ЛУЧН(ЛУЧНИК)]  - Смертоносная точность");
 Console.ForegroundColor = ConsoleColor.Magenta; Console.WriteLine("  4. [ВОР]     - Тени и кинжалы");
 Console.ResetColor();
-
-int choice = ReadInt("Введите номер (1-4): ", 1, 4);
+Console.Write("[?]Выберите класс вашего героя: ");
+int choice = ReadInt("[!] Введите номер (1-4): ", 1, 4);
 
 string classi = "";
 string weapontype = "";
@@ -72,8 +72,8 @@ switch (choice)
         Console.WriteLine("1. Меч и Щит");
 
         Console.WriteLine("2. Топор");
-
-        int weaponChoice = ReadInt("Введите номер оружия (1-2): ", 1, 2);
+Console.Write("[?]Введите номер оружия (1-2): ");
+        int weaponChoice = ReadInt("[!] Введите номер оружия (1-2): ", 1, 2);
 
         weapontype = weaponChoice switch
 
@@ -108,7 +108,8 @@ Console.ForegroundColor = ConsoleColor.Red;
        
         Console.WriteLine("2. Ледяной посох");
 Console.ResetColor();
-        int skillChoice = ReadInt("Введите номер оружия (1-2): ", 1, 2);
+Console.Write("[?]Введите номер оружия (1-2): ");
+        int skillChoice = ReadInt("[!] Введите номер оружия (1-2): ", 1, 2);
 
         weapontype = skillChoice switch
 
@@ -139,25 +140,26 @@ Console.ResetColor();
 
         Console.WriteLine("Выберите оружие для Лучника: ");
 
-        Console.WriteLine("1. Лук и Обычные стрелы");
+        Console.WriteLine("1. Лук");
 
         Console.WriteLine("2. Арбалет");
 Console.ResetColor();   
-        int arrowChoice = ReadInt("Введите номер типа стрел (1-2): ", 1, 2);
+Console.Write("[?]Введите номер оружия (1-2): ");
+        int arrowChoice = ReadInt("[!] Введите номер оружия (1-2): ", 1, 2);
 
         weapontype = arrowChoice switch
 
         {
 
-            1 => "Обычные стрелы",
+            1 => "Лук",
 
-            2 => "Ядовитые стрелы",
+            2 => "Арбалет",
 
             _ => "Такого типа стрел нет."
 
         };
 Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine($"Вы выбрали тип стрел: {weapontype}");
+        Console.WriteLine($"Вы выбрали оружие: {weapontype}");
 
         break;
 
@@ -165,7 +167,7 @@ Console.ForegroundColor = ConsoleColor.Green;
 
         Console.ResetColor();
        
- Console.WriteLine("Доступное оружие для Мага");
+ Console.WriteLine("Доступное оружие для Вора");
         
 
         classi="Вор ";
@@ -177,8 +179,10 @@ Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("1. Кинжал");
 
         Console.WriteLine("2. Скрытное оружие");
+Console.ResetColor();
+Console.Write("[?]Введите номер оружия (1-2): ");
 
-        int rogueSkillChoice = ReadInt("Введите номер оружия (1-2): ", 1, 2);
+        int rogueSkillChoice = ReadInt("[!] Введите номер оружия (1-2): ", 1, 2);
 
         weapontype= rogueSkillChoice switch
 
